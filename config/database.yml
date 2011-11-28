@@ -1,0 +1,6 @@
+production:
+  adapter: mysql
+  database: no_database
+  host: mysql.kishfy.dreamhosters.com
+  username: iingenuity
+  password: seawave76

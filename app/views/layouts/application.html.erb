@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+        <TITLE>Forsyth Gardens - <%= params[:action].titleize -%> <%= "in Philadelphia" unless @skip_in_philly -%></TITLE>
+		<%= stylesheet_link_tag 'http://yui.yahooapis.com/2.5.2/build/reset-fonts-grids/reset-fonts-grids.css' -%>
+		<%= javascript_include_tag :defaults -%>		
+		<%= stylesheet_link_tag 'forsythgardens' -%>
+				
+</HEAD>
+
+<body>
+
+<div id="doc2">
+	<div id="hd">
+		<h1 id="site_name">F o r s y t h  &nbsp; G a r d e n s</h1>
+		<h2 id="phils_purpose"><%= @subtitles.join ' &nbsp;&nbsp;-&nbsp;&nbsp; ' -%>
+			<%= "in Philadelphia" unless @skip_in_philly -%></h2>
+	</div>
+	
+	<div id="bd">
+		<table id="main_contents">
+			<tr>
+				<td id="toc" rowspan="2" nowrap>
+				<% for link in @navlinks %>
+					<div class="navlink">
+					<% if link == params[:action] %>
+						<b><%= link.titleize -%></b>
+					<% else %>
+						<%= link_to link.titleize, :action => link -%>
+					<% end %>
+					</div>
+				<% end %>
+					<div class="navlink">
+						<%= link_to 'PhigBlog', 'http://phigblog.wordpress.com' -%>
+					</div>
+				</td>
+		
+				<% if @strip_images %>
+					<% if @horizontal_images %>						
+						<td>
+							<%= render :partial => 'scrolling_images' -%>
+						</td></tr><tr>
+					<% else %>
+						<td id="image_bar">
+							<% for img in @strip_images %>
+								<%= link_to image_tag(img + "_thumb.png", :width =>	'200px'), "/images/#{img}.jpg", :target => "forsythgardens_detail" -%>
+								<br/>
+							<% end %>
+						</td>
+					<% end %>
+				<% end %>
+				
+				<td id="yield">
+					<%= yield -%>				
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<div id="ft">
+		<br/><br/>
+		<FONT size="+1">"Ask me how a beautiful landscape can help save the planet!"</FONT>
+		<br/><br/>
+		<br/><br/>
+		<br/><br/>
+		<br/><br/>
+		&nbsp;		
+	</div>
+</div>
+
+
+</BODY>
+</HTML>

@@ -1,0 +1,59 @@
+body{
+	background-color:#A09060;
+    background-image:url(/images/forsyth_fixed.jpg);
+    background-attachment:scroll;
+    background-repeat:no-repeat;
+    font-family:Geneva, Arial, Helvetica, sans-serif;
+}
+a { color:#000000 }
+img { border-width: 0px;}
+
+/*start layout*/
+#doc2 {
+	text-align:center;
+}
+
+#site_name {
+	font-size: 3em;
+	padding:20px;
+}
+
+#phils_purpose {
+	font-size: 1.5em;
+	margin-top:10px;
+	margin-bottom:25px;
+}
+
+#toc {
+	vertical-align:top;
+	font-size:1.2em;
+	padding-top:20px;
+}
+
+.navlink {
+	margin:10px;
+	text-decoration:none;
+}
+
+#main_contents {
+	margin-left:100px;
+	margin-right:100px;
+}
+
+#image_bar {
+	padding:10px;
+	vertical-align:top;
+}
+
+#image_bar img {
+	width:200px;
+	padding-bottom:20px;
+} 
+
+#yield {
+	padding:20px;
+	vertical-align:top;
+	font-size:1em;
+}
+/*end layout*/
+

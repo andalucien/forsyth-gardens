@@ -1,0 +1,47 @@
+<style type="text/css">
+#scroll_container_strip {
+	position:relative;
+	left:auto;
+ 	width:500px; 
+	overflow:hidden;
+}
+
+#scrolling_bar {
+	position:relative; 
+	left: 0px;
+}
+
+.image_cell {
+	padding-left:20px;
+	padding-right:20px;
+}	
+</style>
+
+<DIV id="scroll_container_strip">
+        <TABLE border="0" id="scrolling_bar"><TR>
+	<% for image in @strip_images %>
+	    <TD class="image_cell">
+	            <A href="images/<%= image -%>.jpg" target="forsythgardens_detail"><IMG border="0" src="images/<%= image -%>_thumb.png" height="<%= @image_height || 200 -%>" alt="<%= image.titleize -%>"></A>
+	    </TD>
+	<% end %>
+	<% for image in @strip_images %>
+	    <TD class="image_cell">
+	            <A href="images/<%= image -%>.jpg" target="forsythgardens_detail"><IMG border="0" src="images/<%= image -%>_thumb.png" height="<%= @image_height || 200 -%>" alt="<%= image.titleize -%>"></A>
+	    </TD>
+	<% end %>
+        </TR></TABLE>
+</DIV>
+
+<SCRIPT language="javascript"> // scrolling script
+var currentLeft = 0;
+var imageBar = $("scrolling_bar");
+
+function slideImages() {
+  var widthBar = imageBar.offsetWidth / 2;
+  currentLeft -= 1;
+  //debugga.innerHTML = currentLeft;
+  if (currentLeft < - widthBar) currentLeft = 0;
+  imageBar.style.left = "" + currentLeft + "px";
+}
+var intervalScroll = setInterval("slideImages();", 25);
+</SCRIPT>
