@@ -1,4 +1,6 @@
-class MainController < ApplicationController
+class MainController < ActionController::Base
+  
+  layout 'application'
   
   before_filter :set_navlinks
   
