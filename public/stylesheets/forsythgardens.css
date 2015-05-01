@@ -13,6 +13,13 @@ img { border-width: 0px;}
 	text-align:center;
 }
 
+.closed {
+    background-color:white;
+    padding: 4px;
+    border: 1px solid grey;
+    font-size: 2.5em;
+}
+
 #site_name {
 	font-size: 3em;
 	padding:20px;
